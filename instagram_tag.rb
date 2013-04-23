@@ -73,7 +73,7 @@ module Jekyll
         img['src'] = instagram.fetch('url', nil)
 
         if img['title']
-          img['alt'] = img['title'].gsub!(/"/, '&#34;')
+          img['alt'] = img['title'].gsub!(/"/, '')
         elsif instagram['title']
           img['title'] = instagram['title']
           img['alt']   = instagram['title']
