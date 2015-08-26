@@ -70,7 +70,7 @@ module Jekyll
 
         InstagramResultCache.instance.setup(context)
         instagram = InstagramResultCache.instance.get_instagram_by_url(img['src'])
-        img['src'] = instagram.fetch('url', nil)
+        img['src'] = instagram.fetch('thumbnail_url', nil)
 
         if img['title']
           img['alt'] = img['title'].gsub!(/"/, '')
