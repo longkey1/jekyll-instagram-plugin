@@ -32,7 +32,7 @@ module Jekyll
       return @result_cache[code] if @result_cache.has_key?(code)
       return @result_cache[code] = JSON.parse(File.read(@cache_dir + code)) if @cache && File.exist?(@cache_dir + code)
 
-      url = 'http://api.instagram.com/oembed?url=' + url
+      url = 'https://api.instagram.com/oembed?url=' + url
       data = JSON.parse(open(url).read)
       @result_cache[code] = data
       open(@cache_dir + code, "w"){|f| f.write(JSON.generate(data))} if @cache
